@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thisaga SL Travel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #000;
+        }
+        header {
+            background-color: rgba(59, 89, 152, 0.8);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+        }
+        nav {
+            background-color: rgba(51, 51, 51, 0.8);
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: rgba(87, 87, 87, 0.8);
+        }
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: rgba(51, 51, 51, 0.8);
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+        nav ul li:hover ul {
+            display: block;
+        }
+        nav ul li ul li {
+            float: none;
+        }
+        main {
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 1000px;
+            color: #000;
+        }
+        .home-description {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .home-description img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .place {
+            margin-bottom: 30px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .place img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .place h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .hidden {
+            display: none;
+        }
+        footer {
+            background-color: rgba(51, 51, 51, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #3b5998;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Thisaga SL Travel
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Home</a></li>
+            <li>
+                <a href="#" onclick="showSection('temples')">Temples</a>
+                <ul>
+                    <li><a href="#" onclick="showSection('temple_of_tooth')">Temple of the Tooth</a></li>
+                    <li><a href="#" onclick="showSection('gangaramaya')">Gangaramaya Temple</a></li>
+                    <li><a href="#" onclick="showSection('dambulla_cave')">Dambulla Cave Temple</a></li>
+                    <li><a href="#" onclick="showSection('mihintale')">Mihintale</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('nature')">Nature</a>
+                <ul>
+                    <li><a href="#" onclick="showSection('yala')">Yala National Park</a></li>
+                    <li><a href="#" onclick="showSection('horton_plains')">Horton Plains</a></li>
+                    <li><a href="#" onclick="showSection('sinharaja')">Sinharaja Forest Reserve</a></li>
+                    <li><a href="#" onclick="showSection('adams_peak')">Adam's Peak</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('historical_sites')">Historical Sites</a>
+                <ul>
+                    <li><a href="#" onclick="showSection('sigiriya')">Sigiriya</a></li>
+                    <li><a href="#" onclick="showSection('polonnaruwa')">Polonnaruwa</a></li>
+                    <li><a href="#" onclick="showSection('anuradhapura')">Anuradhapura</a></li>
+                    <li><a href="#" onclick="showSection('galle_fort')">Galle Fort</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" onclick="showSection('beaches')">Beaches</a>
+                <ul>
+                    <li><a href="#" onclick="showSection('unawatuna')">Unawatuna Beach</a></li>
+                    <li><a href="#" onclick="showSection('mirissa')">Mirissa Beach</a></li>
+                    <li><a href="#" onclick="showSection('arugam_bay')">Arugam Bay</a></li>
+                    <li><a href="#" onclick="showSection('nilaveli')">Nilaveli Beach</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <!-- Home Description -->
+        <div id="home" class="home-description">
+            <img src="homepage.jpg" alt="Beautiful view of Sri Lanka">
+            <h2>Welcome to Thisaga SL Travel</h2>
+            <p>Thisaga SL Travel is your ultimate guide to exploring the beautiful island of Sri Lanka. Whether you're looking to discover ancient fortresses, sacred temples, or vibrant wildlife, we have the information you need. Explore our curated list of top tourist destinations and plan your perfect trip to Sri Lanka!</p>
+        </div>
+
+        <!-- Temples -->
+        <div id="temples" class="hidden">
+            <div id="temple_of_tooth" class="place">
+                <h2>Temple of the Tooth Relic</h2>
+                <img src="temple_of_tooth.jpg" alt="Temple of the Tooth">
+                <p>Visiting Hours: 5:30 AM - 8:00 PM</p>
+                <p>The Temple of the Tooth Relic, located in Kandy, is one of the most sacred Buddhist sites in Sri Lanka.</p>
+                <a href="https://maps.app.goo.gl/FNQYZ9zXASr4fSYw9" target="_blank">View on Map</a>
+            </div>
+            <div id="gangaramaya" class="place">
+                <h2>Gangaramaya Temple</h2>
+                <img src="gangaramaya.jpg" alt="Gangaramaya Temple">
+                <p>Visiting Hours: 5:00 AM - 10:00 PM</p>
+                <p>Gangaramaya Temple, located in Colombo, is a key center for Buddhist worship and learning.</p>
+                <a href="https://maps.app.goo.gl/hZEjmqdehgJ6DekD9" target="_blank">View on Map</a>
+            </div>
+            <div id="dambulla_cave" class="place">
+                <h2>Dambulla Cave Temple</h2>
+                <img src="dambulla_cave.jpg" alt="Dambulla Cave Temple">
+                <p>Visiting Hours: 7:30 AM - 5:30 PM</p>
+                <p>Dambulla Cave Temple is a UNESCO World Heritage site with a complex of ancient Buddhist temples.</p>
+                <a href="https://maps.app.goo.gl/kCggSbhCcX4MRu9s6" target="_blank">View on Map</a>
+            </div>
+            <div id="mihintale" class="place">
+                <h2>Mihintale</h2>
+                <img src="mihintale.jpg" alt="Mihintale">
+                <p>Visiting Hours: 6:00 AM - 6:00 PM</p>
+                <p>Mihintale is a historic site with significant religious and historical importance, featuring ancient ruins and a beautiful viewpoint.</p>
+                <a href="https://maps.app.goo.gl/nbWYUbBFWu7fzf65A" target="_blank">View on Map</a>
+            </div>
+        </div>
+
+        <!-- Nature -->
+        <div id="nature" class="hidden">
+            <div id="yala" class="place">
+                <h2>Yala National Park</h2>
+                <img src="yala.jpg" alt="Yala National Park">
+                <p>Visiting Hours: 6:00 AM - 6:00 PM</p>
+                <p>Yala National Park is famous for its diverse wildlife, including leopards, elephants, and a variety of bird species.</p>
+                <a href="https://maps.app.goo.gl/LSALkJw8qECPV8u38" target="_blank">View on Map</a>
+            </div>
+            <div id="horton_plains" class="place">
+                <h2>Horton Plains</h2>
+                <img src="horton_plains.jpg" alt="Horton Plains">
+                <p>Visiting Hours: 6:00 AM - 6:00 PM</p>
+                <p>Horton Plains is a beautiful plateau with rich biodiversity and stunning views, including the famous World's End.</p>
+                <a href="https://maps.app.goo.gl/f5tAst3ZwBqj9xJ6A" target="_blank">View on Map</a>
+            </div>
+            <div id="sinharaja" class="place">
+                <h2>Sinharaja Forest Reserve</h2>
+                <img src="sinharaja.jpg" alt="Sinharaja Forest Reserve">
+                <p>Visiting Hours: 6:00 AM - 6:00 PM</p>
+                <p>Sinharaja is a UNESCO World Heritage Site and one of the last remaining virgin rainforests in Sri Lanka.</p>
+                <a href="https://maps.app.goo.gl/zCAAJevdCC3GJTvz7" target="_blank">View on Map</a>
+            </div>
+            <div id="adams_peak" class="place">
+                <h2>Adam's Peak</h2>
+                <img src="adams_peak.jpg" alt="Adam's Peak">
+                <p>Visiting Hours: Open 24 hours (Best time: December - May)</p>
+                <p>Adam's Peak is a sacred mountain in Sri Lanka, famous for its "sacred footprint" and stunning sunrise views.</p>
+                <a href="https://maps.app.goo.gl/zdo9C7oQcKrZLjTj6" target="_blank">View on Map</a>
+            </div>
+        </div>
+
+        <!-- Historical Sites -->
+        <div id="historical_sites" class="hidden">
+            <div id="sigiriya" class="place">
+                <h2>Sigiriya Rock Fortress</h2>
+                <img src="sigiriya.jpg" alt="Sigiriya">
+                <p>Visiting Hours: 7:00 AM - 5:30 PM</p>
+                <p>Sigiriya, also known as Lion Rock, is an ancient rock fortress located in the central Matale District.</p>
+                <a href="https://maps.app.goo.gl/8TMMP7oJnXnsDvtJA" target="_blank">View on Map</a>
+            </div>
+            <div id="polonnaruwa" class="place">
+                <h2>Polonnaruwa</h2>
+                <img src="polonnaruwa.jpg" alt="Polonnaruwa">
+                <p>Visiting Hours: 7:00 AM - 5:30 PM</p>
+                <p>Polonnaruwa is a UNESCO World Heritage site and was the second capital of ancient Sri Lanka.</p>
+                <a href="https://maps.app.goo.gl/AXSGEdBX36DkUVbn7" target="_blank">View on Map</a>
+            </div>
+            <div id="anuradhapura" class="place">
+                <h2>Anuradhapura</h2>
+                <img src="anuradhapura.jpg" alt="Anuradhapura">
+                <p>Visiting Hours: 6:00 AM - 6:00 PM</p>
+                <p>Anuradhapura is one of the ancient capitals of Sri Lanka, famous for its well-preserved ruins and stupas.</p>
+                <a href="https://maps.app.goo.gl/6yaNZQYZN1pyRk3v7" target="_blank">View on Map</a>
+            </div>
+            <div id="galle_fort" class="place">
+                <h2>Galle Fort</h2>
+                <img src="galle_fort.jpg" alt="Galle Fort">
+                <p>Visiting Hours: Open 24 hours</p>
+                <p>Galle Fort, a UNESCO World Heritage Site, is a historic fortress located in the coastal city of Galle.</p>
+                <a href="https://maps.app.goo.gl/GcJue6wuFf6aqtY37" target="_blank">View on Map</a>
+            </div>
+        </div>
+
+        <!-- Beaches -->
+        <div id="beaches" class="hidden">
+            <div id="unawatuna" class="place">
+                <h2>Unawatuna Beach</h2>
+                <img src="unawatuna.jpg" alt="Unawatuna Beach">
+                <p>Visiting Hours: Open 24 hours</p>
+                <p>Unawatuna Beach is one of the most popular beaches in Sri Lanka, known for its golden sands and clear waters.</p>
+                <a href="https://maps.app.goo.gl/BgdtesP4W74LCcBaA" target="_blank">View on Map</a>
+            </div>
+            <div id="mirissa" class="place">
+                <h2>Mirissa Beach</h2>
+                <img src="mirissa.jpg" alt="Mirissa Beach">
+                <p>Visiting Hours: Open 24 hours</p>
+                <p>Mirissa Beach is famous for its picturesque bay and whale watching tours.</p>
+                <a href="https://maps.app.goo.gl/YSzbXSLuAmgEnyvh7" target="_blank">View on Map</a>
+            </div>
+            <div id="arugam_bay" class="place">
+                <h2>Arugam Bay</h2>
+                <img src="arugam_bay.jpg" alt="Arugam Bay">
+                <p>Visiting Hours: Open 24 hours</p>
+                <p>Arugam Bay is a world-renowned surfing destination on the southeast coast of Sri Lanka.</p>
+                <a href="https://maps.app.goo.gl/ArZd8JF1G9WFpVw26" target="_blank">View on Map</a>
+            </div>
+            <div id="nilaveli" class="place">
+                <h2>Nilaveli Beach</h2>
+                <img src="nilaveli.jpg" alt="Nilaveli Beach">
+                <p>Visiting Hours: Open 24 hours</p>
+                <p>Nilaveli Beach is known for its serene beauty and is a great spot for snorkeling and diving.</p>
+                <a href="https://maps.app.goo.gl/Bdan3g5XX2eLvviu6" target="_blank">View on Map</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        © 2024 Thisaga SL Travel. All Rights Reserved.
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('main > div').forEach(div => {
+                div.classList.add('hidden');
+            });
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Show home page by default
+        showSection('home');
+    </script>
+</body>
+</html>
